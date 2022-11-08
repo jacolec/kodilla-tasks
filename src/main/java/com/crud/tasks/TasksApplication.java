@@ -18,6 +18,13 @@ public class TasksApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 
+		/* String mailUser = System.getenv("MAIL_USERNAME");
+		String mailPassword = System.getenv("MAIL_PASSWORD");
+
+		System.out.println("MAIL_USERNAME: " + mailUser + " MAIL_PASSWORD: " + mailPassword);
+
+		 */
+
 		SpringApplication.run(TasksApplication.class, args);
 
 	}
