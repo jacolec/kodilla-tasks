@@ -58,7 +58,7 @@ class TaskControllerTest {
 
         //When & Then
         mockMvc.perform(MockMvcRequestBuilders
-                .get("/v1/tasks/").param("taskId", "1")
+                .get("/v1/tasks/{taskId}", 1)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.id", Matchers.is(1)))
@@ -73,7 +73,7 @@ class TaskControllerTest {
 
         //When & Then
         mockMvc.perform(MockMvcRequestBuilders
-                .delete("/v1/tasks").param("taskId", "1")
+                .delete("/v1/tasks/{taskId}", 1)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
