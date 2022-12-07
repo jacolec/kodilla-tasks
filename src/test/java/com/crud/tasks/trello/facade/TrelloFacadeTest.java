@@ -11,6 +11,7 @@ import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -26,13 +27,13 @@ class TrelloFacadeTest {
     @InjectMocks
     private TrelloFacade trelloFacade;
 
-    @InjectMocks
+    @Mock
     private TrelloService trelloService;
 
-    @InjectMocks
+    @Mock
     private TrelloValidator trelloValidator;
 
-    @InjectMocks
+    @Mock
     private TrelloMapper trelloMapper;
 
     @Test
@@ -74,7 +75,7 @@ class TrelloFacadeTest {
 
         //Then
         assertThat(trelloBoardDtos).isNotNull();
-        assertThat(trelloBoardDtos.size()).isEqualTo(0);
+        assertThat(trelloBoardDtos.size()).isEqualTo(1);
 
         trelloBoardDtos.forEach(trelloBoardDto -> {
             assertThat(trelloBoardDto.getId()).isEqualTo("1");
